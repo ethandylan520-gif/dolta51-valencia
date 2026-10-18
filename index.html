@@ -49,7 +49,7 @@
   /* Portada */
   .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 120px 6% 70px; overflow: hidden; }
   .hero > img.fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,11,11,.97) 0%, rgba(11,11,11,.88) 45%, rgba(11,11,11,.35) 100%); }
+  .hero { background: radial-gradient(circle at 18% 50%, rgba(242,232,18,.10) 0, transparent 38%), radial-gradient(circle at 85% 20%, rgba(242,232,18,.05) 0, transparent 30%), var(--negro); }
   .hero-in { position: relative; z-index: 2; display: grid; grid-template-columns: auto 1fr; gap: 50px; align-items: center; max-width: 1180px; width: 100%; margin: 0 auto; }
   .hero-logo { width: 290px; height: 290px; border-radius: 50%; box-shadow: 0 0 0 3px var(--amarillo), 0 0 60px rgba(242,232,18,.25); }
   .hero h1 { font-size: clamp(2.8rem, 6vw, 5.4rem); margin: 8px 0 20px; }
@@ -127,8 +127,8 @@
   .galeria figure:hover img { transform: scale(1.05); }
 
   /* Opiniones */
-  .opiniones { columns: 3; column-gap: 20px; }
-  .op { break-inside: avoid; background: var(--negro-3); border: 1px solid var(--linea); border-radius: 10px; padding: 26px 26px 22px; margin-bottom: 20px; }
+  .opiniones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+  .op { background: var(--negro-3); border: 1px solid var(--linea); border-radius: 10px; padding: 26px 26px 22px; }
   .op .est { color: var(--amarillo); letter-spacing: 3px; margin-bottom: 10px; }
   .op p { color: #e6e6e0; margin-bottom: 12px; }
   .op cite { font-style: normal; font-size: .82rem; color: var(--gris); }
@@ -179,8 +179,7 @@
     nav ul li:not(:last-child) { display: none; }
     .marca img { width: 44px; height: 44px; }
     .marca span { font-size: 1.15rem; }
-    .hero { padding: 100px 6% 60px; align-items: flex-end; }
-    .hero::after { background: linear-gradient(0deg, rgba(11,11,11,.97) 0%, rgba(11,11,11,.88) 60%, rgba(11,11,11,.55) 100%); }
+    .hero { padding: 100px 6% 60px; min-height: 0; background: radial-gradient(circle at 30% 18%, rgba(242,232,18,.12) 0, transparent 40%), var(--negro); }
     .hero-in { grid-template-columns: 1fr; gap: 26px; }
     .hero-logo { width: 150px; height: 150px; }
     .botones .btn { flex: 1 1 100%; }
@@ -190,7 +189,7 @@
     .personas { gap: 8px; }
     .personas b { font-size: 1.25rem; }
     .galeria { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .opiniones { columns: 1; }
+    .opiniones { grid-template-columns: 1fr; }
     .local { grid-template-columns: 1fr 1fr; grid-template-rows: 280px 170px; gap: 8px; }
     .local img:first-child { grid-row: auto; grid-column: span 2; }
     .bloque { padding: 26px 20px 12px; }
@@ -218,7 +217,6 @@
 </header>
 
 <div class="hero" id="inicio">
-  <img class="fondo" src="img/local-1.jpg" alt="Interior de Barbería D'Olta 51">
   <div class="hero-in">
     <img class="hero-logo" src="img/logo.jpg" alt="Logo de Barbería D'Olta 51">
     <div>
@@ -341,12 +339,6 @@
     <div class="op"><div class="est">★★★★★</div><p>“Todo un profesional. Se toma el tiempo necesario para dejar un acabado perfecto. Otra cosa a valorar: la limpieza del local y de todos los útiles que utiliza. Muy recomendable.”</p><cite><b>Javier</b> · Booksy</cite></div>
     <div class="op"><div class="est">★★★★★</div><p>“Todo espectacular, me atendió Guillermo, el dueño, y a partir de ahora será mi peluquero de confianza.”</p><cite><b>Juan Pablo</b> · Booksy</cite></div>
     <div class="op"><div class="est">★★★★★</div><p>“Me atendió Agustín, un chico súper simpático, amable y atento. Fue rápido, preciso y puntual. Además la barbería súper limpia y todo nuevo y de calidad. Un 10 en todos los aspectos.”</p><cite><b>Christian</b> · Booksy</cite></div>
-    <div class="op"><div class="est">★★★★★</div><p>“Genial como siempre, es como estar en casa. Guillermo es el peluquero de mi hijo desde que tenía 1 añito.”</p><cite><b>Laia</b> · Booksy</cite></div>
-    <div class="op"><div class="est">★★★★★</div><p>“Excelente trato por parte de los dos peluqueros, te asesoran, se nota que les gusta lo que hacen y le ponen empeño en dejarte impecable.”</p><cite><b>Pablo</b> · Booksy</cite></div>
-    <div class="op"><div class="est">★★★★★</div><p>“Guillermo es un auténtico profesional. Muy buen trato, atento a cada detalle y un trabajo impecable. ¡Totalmente recomendable!”</p><cite><b>Emilio</b> · Booksy</cite></div>
-    <div class="op"><div class="est">★★★★★</div><p>“Buen servicio, orden, limpieza y sobre todo la atención impecable. Llegué por recomendación de una amiga y salí encantada.”</p><cite><b>Carmen</b> · Booksy</cite></div>
-    <div class="op"><div class="est">★★★★★</div><p>“Muy buen trato por parte de Agustín. Me ha recomendado un nuevo corte de pelo. Recomendable 100%.”</p><cite><b>Adrián</b> · Booksy</cite></div>
-    <div class="op"><div class="est">★★★★★</div><p>“Siempre excelente. Guillermo es un amor, vamos con los dos niños de 4 y 2 años y es estupendo.”</p><cite><b>Carolina</b> · Booksy</cite></div>
   </div>
 </section>
 </div>
