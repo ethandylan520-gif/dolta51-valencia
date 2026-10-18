@@ -49,7 +49,7 @@
   /* Portada */
   .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 120px 6% 70px; overflow: hidden; }
   .hero > img.fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .hero { background: radial-gradient(circle at 18% 50%, rgba(242,232,18,.10) 0, transparent 38%), radial-gradient(circle at 85% 20%, rgba(242,232,18,.05) 0, transparent 30%), var(--negro); }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,11,11,.97) 0%, rgba(11,11,11,.88) 45%, rgba(11,11,11,.35) 100%); }
   .hero-in { position: relative; z-index: 2; display: grid; grid-template-columns: auto 1fr; gap: 50px; align-items: center; max-width: 1180px; width: 100%; margin: 0 auto; }
   .hero-logo { width: 290px; height: 290px; border-radius: 50%; box-shadow: 0 0 0 3px var(--amarillo), 0 0 60px rgba(242,232,18,.25); }
   .hero h1 { font-size: clamp(2.8rem, 6vw, 5.4rem); margin: 8px 0 20px; }
@@ -125,6 +125,8 @@
   .galeria figure { position: relative; overflow: hidden; border-radius: 8px; }
   .galeria img { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: transform .4s; }
   .galeria figure:hover img { transform: scale(1.05); }
+  .galeria .ancha { grid-column: span 2; }
+  .galeria .ancha img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: center 35%; }
 
   /* Opiniones */
   .opiniones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
@@ -179,7 +181,8 @@
     nav ul li:not(:last-child) { display: none; }
     .marca img { width: 44px; height: 44px; }
     .marca span { font-size: 1.15rem; }
-    .hero { padding: 100px 6% 60px; min-height: 0; background: radial-gradient(circle at 30% 18%, rgba(242,232,18,.12) 0, transparent 40%), var(--negro); }
+    .hero { padding: 100px 6% 60px; align-items: flex-end; }
+    .hero::after { background: linear-gradient(0deg, rgba(11,11,11,.97) 0%, rgba(11,11,11,.88) 60%, rgba(11,11,11,.55) 100%); }
     .hero-in { grid-template-columns: 1fr; gap: 26px; }
     .hero-logo { width: 150px; height: 150px; }
     .botones .btn { flex: 1 1 100%; }
@@ -189,6 +192,7 @@
     .personas { gap: 8px; }
     .personas b { font-size: 1.25rem; }
     .galeria { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .galeria .ancha { aspect-ratio: 16/11; }
     .opiniones { grid-template-columns: 1fr; }
     .local { grid-template-columns: 1fr 1fr; grid-template-rows: 280px 170px; gap: 8px; }
     .local img:first-child { grid-row: auto; grid-column: span 2; }
@@ -217,6 +221,7 @@
 </header>
 
 <div class="hero" id="inicio">
+  <img class="fondo" src="img/local-1.jpg" alt="Interior de Barbería D'Olta 51">
   <div class="hero-in">
     <img class="hero-logo" src="img/logo.jpg" alt="Logo de Barbería D'Olta 51">
     <div>
@@ -319,14 +324,13 @@
   <h2 class="titulo">Salidos del sillón</h2>
   <p class="intro">Degradados, cortes con diseño y clásicos de toda la vida. Algunos de nuestros últimos trabajos.</p>
   <div class="galeria">
-    <figure><img src="img/corte-3.jpg" alt="Degradado con diseño de líneas"></figure>
     <figure><img src="img/corte-4.jpg" alt="Corte con volumen y degradado"></figure>
     <figure><img src="img/corte-1.jpg" alt="Corte con degradado en la nuca"></figure>
     <figure><img src="img/corte-6.jpg" alt="Degradado con raya"></figure>
     <figure><img src="img/corte-5.jpg" alt="Corte texturizado"></figure>
     <figure><img src="img/corte-2.jpg" alt="Corte clásico peinado"></figure>
-    <figure><img src="img/corte-8.jpg" alt="Corte clásico para caballero"></figure>
     <figure><img src="img/corte-7.jpg" alt="Corte con degradado lateral"></figure>
+    <figure class="ancha"><img src="img/corte-8.jpg" alt="Corte clásico para caballero"></figure>
   </div>
 </section>
 
